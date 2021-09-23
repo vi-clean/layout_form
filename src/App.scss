@@ -1,0 +1,62 @@
+:root {
+  --lit-blue: #f1f5ff;
+}
+html {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.App {
+  background-color: #f1f5ff;
+}
+.m-x-a {
+  margin: 0 auto;
+}
+
+.f-icon {
+  color: #3c71ff;
+  font: normal bolder 1.5rem Arial;
+  vertical-align: middle;
+}
+
+@media (prefers-reduced-motion: no-preference) {}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.xs-hide.xs-hide {
+  padding: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .xs-hide {
+    display: none;
+    padding: 0;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

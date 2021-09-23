@@ -1,0 +1,233 @@
+$med-blue: #3c71ff;
+$lit-blue: #f1f5ff;
+$lit-grey: #757575;
+
+.p-10 { padding: 1rem }
+.bdrs { border-radius: .375rem }
+.mr-1 { margin-right: .5rem }
+.ml-1 { margin-left: .5rem }
+.bdrs-md { border-radius: 1rem }
+.txt-al {
+  position: absolute;
+  text-align: left;
+  left: 1.375rem;
+  bottom: .25rem;
+}
+
+.eye-icon {
+  cursor: pointer;
+  top: 50%;
+  right: 2rem;
+  width: 13px;
+  height: 13px;
+  border: solid 1px $lit-grey;
+  border-radius:  80% 15%;
+  position: absolute;
+  transform: rotate(45deg) translateY(-50%);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border: solid 1px $lit-grey;
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+  }
+}
+.cross-line {
+  width:100%;
+  text-align: left;
+  border-bottom: 1px solid #000; 
+  line-height: 0;
+  margin: 1rem 0;
+  span {
+    background:#fff;
+    padding-right: 1rem; 
+  }
+}
+
+.form {
+  padding: 1rem;
+  margin: 1rem auto;
+  min-width: 310px;
+  background-color: #fff;
+  .opts {
+    text-align: left;
+  }
+
+  &-wrapper {
+    // background-color: #fdf;
+    padding: 1rem;
+  }
+
+  &__head {
+    // background-color: grey;
+    .title {
+      text-align: left;
+      &__main {
+        font-size: 1.125rem;
+      }
+      &__sub {
+        font-size: .765rem;
+      }
+    }
+
+  }
+
+  &__body {
+    // background-color: #af1;
+    .submit {
+      background-color: $med-blue;
+      &:hover {
+        background-color: $med-blue;
+        box-shadow: 0 5px 15px -5px $med-blue;
+      }
+      .btn {
+        width: 100%;
+        border: 0;
+        font-weight: bolder;
+        font-size: 1rem;
+        color: #fff;
+        background-color: transparent;
+
+      }
+
+    }
+  }
+  &__footer {
+    // background-color: #abc;
+    .login {
+      font-size: 1rem;
+      font-weight: bolder;
+      margin-left: .375rem;
+    }
+  }
+}
+.tick {
+  position: relative;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #ababab;
+  border: 1px solid #ababab;
+  margin-right: 1rem;
+  transition:
+    background-color .3s ease,
+    colour .3s ease;
+  &::after {
+    content: '';
+    left: 4px;
+    bottom: 8px;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    opacity: 0;
+    border-left: 2px solid $med-blue;
+    border-bottom: 2px solid $med-blue;
+    transform: rotate(-50deg);
+    transition: opacity 300ms ease;
+  }
+}
+.policy {
+  display: flex;
+  align-items: center;
+  position: relative;
+  [type="checkbox"]:checked ~ .tick {
+    background-color: #fff;
+    &::after {
+      opacity: 1;
+    }
+  }
+  &__content {
+    font-size: .75rem;
+  }
+}
+
+.entry {
+  display: flex;
+  flex-wrap: wrap;
+  .btn {
+    border: 1px solid $med-blue;
+    margin: .375rem auto;
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: .875rem;
+    font-weight: bold;
+    &:hover {
+      background-color: $med-blue;
+      box-shadow: 0 5px 15px -5px $med-blue;
+      color: white;
+      > .f-icon {
+        color: white;
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  background-color: $lit-blue;
+  margin: 1rem 0;
+  > input {
+    border: 0;
+    padding: .375rem;
+    width: 100%;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    &:focus {
+      outline: transparent;
+    }
+    &:focus ~ .placeholder,
+    &:not(:placeholder-shown) ~ .placeholder {
+      transform: translate(.375rem, -1.5rem);
+    }
+  }
+  .placeholder {
+    position: absolute;
+    pointer-events: none;
+    color: $lit-grey;
+    left: 1rem;
+    top: 50%;
+    transition: transform .2s;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 575px) {
+  .entry {
+    .btn {
+      font-size: 1.125rem;
+    }
+  }
+  .form {
+    border-radius: 0;
+  }
+  .policy__content {
+    font-size: .875rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .form {
+    max-width: 600px;
+    &-wrapper {
+      width: 400px;
+      padding: 1rem 0;
+    }
+    .entry {
+      display: flex;
+      flex-wrap: nowrap;
+      .btn {
+        width: 50%;
+        padding: 1rem .375rem;
+        &:first-child {
+          margin-right: .375rem;
+        }
+        &:last-child {
+          margin-left: .375rem;
+        }
+      }
+    }
+  }
+}
